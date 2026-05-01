@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Sound</title>
+    <style>
+        body { background: #121212; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        button { background: linear-gradient(135deg, #6e8efb, #a777e3); border: none; padding: 20px 40px; color: white; font-size: 1.2rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.2s; }
+        button:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+    <h1>Random Sound Player</h1>
+    <button onclick="putarSuara()">KLIK UNTUK SUARA</button>
+
+    <script>
+        let audioSekarang = null;
+        function putarSuara() {
+            if (audioSekarang) { audioSekarang.pause(); }
+            // Angka 80 sesuaikan dengan jumlah filemu
+            let nomor = Math.floor(Math.random() * 80) + 1; 
+            audioSekarang = new Audio(nomor + '.mp3');
+            audioSekarang.play();
+        }
+    </script>
+</body>
+</html>
